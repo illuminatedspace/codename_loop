@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/_Scenes/Game.Jam.Final.Looper.unity
+  isLoaded: 1
+  isActive: 1
