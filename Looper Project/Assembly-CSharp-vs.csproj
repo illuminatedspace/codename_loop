@@ -53,6 +53,8 @@
      <Compile Include="Assets\Scripts\Music Script.cs" />
      <Compile Include="Assets\Scripts\PlayerSc.cs" />
      <Compile Include="Assets\Scripts\PortalBehaviour.cs" />
+     <Compile Include="Assets\Scripts\TextScript.cs" />
+     <Compile Include="Assets\TextScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
