@@ -5,17 +5,27 @@ using UnityEngine.UI;
 public class TextScript : MonoBehaviour {
     //publc variables
     public Text text;
+    public string[] dialogueText;
     public static bool colorChange;
-    public bool textChange;
+    public static bool textChange;
 
     //private variables
-    private enum LoopState {
-        first, second, third
-        };
     private Color targetColor;
+    private int loopCount;
+    private int loopLimit;
+    
+
+    // Used before initialization
+    void Awake () {
+        colorChange = false;
+        textChange = false;
+    }
 
 	// Use this for initialization
 	void Start () {
+        loopCount = 0;
+        loopLimit = dialogueText.Length;
+        Debug.Log("limit is" + loopLimit);
         targetColor = text.color;
         targetColor.a = 0f;
         text.color = targetColor;
@@ -27,6 +37,10 @@ public class TextScript : MonoBehaviour {
             showText();
         } else {
             hideText();
+        }
+
+        if (textChange) {
+            cycletText();
         }
     }
 
@@ -40,5 +54,16 @@ public class TextScript : MonoBehaviour {
         targetColor.a = 0f;
         text.color = targetColor;
         Debug.Log("Text should dissapear!");
+    }
+
+    void cycletText() {
+        Debug.Log("cycle text has occured!");
+        if (loopCount > loopLimit) {
+            Debug.Log("loop cycle reset!!!");
+            loopCount = 0;
+        }
+        text.text = dialogueText[loopCount];
+        loopCount++;
+        textChange = false;
     }
 }

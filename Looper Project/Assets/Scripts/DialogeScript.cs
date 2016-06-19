@@ -29,6 +29,7 @@ public class DialogeScript : MonoBehaviour
         Debug.Log("Entered collider");
         targetColor.a = 1f;
         TextScript.colorChange = true;
+        TextScript.textChange = true;
     }
 
     void OnTriggerExit2D(Collider2D collider) {
