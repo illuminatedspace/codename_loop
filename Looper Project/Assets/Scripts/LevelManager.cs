@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManager;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
     static LevelManager instance = null;
+    static public SceneManager sceneManager;
     
 
     // public variables
@@ -41,7 +42,8 @@ public class LevelManager : MonoBehaviour {
 	}
 
     public void LoadNextLevel() {
+        //get's current scene index for future use
         Debug.Log("Loading next scene");
-        SceneManager.LoadScene(Application.loadedLevel + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //adds one to the current scene index
     }
 }
