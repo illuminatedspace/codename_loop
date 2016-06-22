@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\CameraBehavior.cs" />
      <Compile Include="Assets\Scripts\DialogeScript.cs" />
      <Compile Include="Assets\Scripts\GizmoMark.cs" />
+     <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\Music Script.cs" />
      <Compile Include="Assets\Scripts\PlayerSc.cs" />
      <Compile Include="Assets\Scripts\PortalBehaviour.cs" />
