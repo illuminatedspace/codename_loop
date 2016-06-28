@@ -13,7 +13,6 @@ public class TextScript : MonoBehaviour {
     private Color targetColor;
     private int loopCount;
     private int loopLimit;
-    
 
     // Used before initialization
     void Awake () {
@@ -25,7 +24,7 @@ public class TextScript : MonoBehaviour {
 	void Start () {
         loopCount = 0;
         loopLimit = dialogueText.Length;
-        Debug.Log("limit is" + loopLimit);
+        Debug.Log("loopLimit is " + loopLimit);
         targetColor = text.color;
         targetColor.a = 0f;
         text.color = targetColor;
@@ -57,13 +56,14 @@ public class TextScript : MonoBehaviour {
     }
 
     void cycletText() {
-        Debug.Log("cycle text has occured!");
-        if (loopCount > loopLimit) {
+        Debug.Log("cycle text has occured! loopCount is: " + loopCount);
+        text.text = dialogueText[loopCount];
+        if (loopCount >= loopLimit - 1) {
             Debug.Log("loop cycle reset!!!");
             loopCount = 0;
+        } else {
+            loopCount++;
         }
-        text.text = dialogueText[loopCount];
-        loopCount++;
         textChange = false;
     }
 }
